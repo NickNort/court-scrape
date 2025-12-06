@@ -28,7 +28,7 @@ interface Input {
 await Actor.init();
 
 // Structure of input is defined in input_schema.json
-const { startUrls = ['https://sf.courts.ca.gov/online-services/case-information'], maxRequestsPerCrawl = 100 } =
+const { startUrls = [{ url: 'https://sf.courts.ca.gov/online-services/case-information' }], maxRequestsPerCrawl = 100 } =
     (await Actor.getInput<Input>()) ?? ({} as Input);
 
 const proxyConfiguration = await Actor.createProxyConfiguration();
@@ -37,10 +37,14 @@ const crawler = new PlaywrightCrawler({
     proxyConfiguration,
     maxRequestsPerCrawl,
     requestHandler: router,
+    // Increase timeout for Cloudflare and complex navigation
+    requestHandlerTimeoutSecs: 180,
     launchContext: {
         launchOptions: {
+            headless: false,
             args: [
                 '--disable-gpu', // Mitigates the "crashing GPU process" issue in Docker containers
+                '--disable-blink-features=AutomationControlled',
             ],
         },
     },

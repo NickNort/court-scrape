@@ -10,7 +10,7 @@
             "editor": "requestListSources",
             "prefill": [
                 {
-                    "url": "https://apify.com"
+                    "url": "https://sf.courts.ca.gov/online-services/case-information"
                 }
             ]
         },
