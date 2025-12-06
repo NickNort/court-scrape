@@ -1,12 +1,12 @@
 {
-    "title": "PlaywrightCrawler Template",
+    "title": "Court Data Scraper",
     "type": "object",
     "schemaVersion": 1,
     "properties": {
         "startUrls": {
-            "title": "Start URLs",
+            "title": "Court URLs to Scrape",
             "type": "array",
-            "description": "URLs to start with.",
+            "description": "Court website URLs to extract things from.",
             "editor": "requestListSources",
             "prefill": [
                 {
