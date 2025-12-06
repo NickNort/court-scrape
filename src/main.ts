@@ -45,6 +45,11 @@ const crawler = new PlaywrightCrawler({
             args: [
                 '--disable-gpu', // Mitigates the "crashing GPU process" issue in Docker containers
                 '--disable-blink-features=AutomationControlled',
+                '--disable-popup-blocking', // Allow popups and new tabs
+                '--disable-web-security', // Allow cross-origin requests in new tabs
+                '--allow-running-insecure-content', // Allow mixed content
+                '--disable-features=VizDisplayCompositor', // Prevent some blocking behaviors
+                '--no-sandbox', // Disable sandbox for more permissive behavior
             ],
         },
     },
