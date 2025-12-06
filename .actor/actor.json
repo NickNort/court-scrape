@@ -1,0 +1,17 @@
+{
+	"actorSpecification": 1,
+	"name": "court-scrape",
+	"title": "Project Playwright Crawler Typescript",
+	"description": "Crawlee and Playwright project in typescript.",
+	"version": "0.0",
+	"meta": {
+		"templateId": "ts-crawlee-playwright-chrome",
+		"generatedBy": "<FILL-IN-MODEL>"
+	},
+	"input": "./input_schema.json",
+	"output": "./output_schema.json",
+	"storages": {
+		"dataset": "./dataset_schema.json"
+	},
+	"dockerfile": "../Dockerfile"
+}
