@@ -6,6 +6,16 @@
             "type": "string",
             "title": "Overview",
             "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+        },
+        "detailedButtonData": {
+            "type": "string",
+            "title": "Detailed Button Data",
+            "template": "{{links.apiDefaultDatasetUrl}}/items?view=detailed"
+        },
+        "rawDataset": {
+            "type": "string",
+            "title": "Raw Dataset",
+            "template": "{{links.apiDefaultDatasetUrl}}/items"
         }
     }
 }

@@ -5,18 +5,155 @@
         "overview": {
             "title": "Overview",
             "transformation": {
-                "fields": ["title", "url"]
+                "fields": ["type", "text", "pageTitle", "pageUrl", "extractedAt"]
             },
             "display": {
                 "component": "table",
                 "properties": {
-                    "title": {
-                        "label": "Title",
+                    "type": {
+                        "label": "Data Type",
                         "format": "text"
                     },
-                    "url": {
-                        "label": "URL",
+                    "text": {
+                        "label": "Content",
+                        "format": "text"
+                    },
+                    "pageTitle": {
+                        "label": "Page Title",
+                        "format": "text"
+                    },
+                    "pageUrl": {
+                        "label": "Source URL",
                         "format": "link"
+                    },
+                    "extractedAt": {
+                        "label": "Extracted At",
+                        "format": "date"
+                    }
+                }
+            }
+        },
+        "buttons": {
+            "title": "Button Elements",
+            "transformation": {
+                "fields": ["text", "type", "visible", "disabled", "pageTitle", "pageUrl", "extractedAt"]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "text": {
+                        "label": "Button Text",
+                        "format": "text"
+                    },
+                    "type": {
+                        "label": "Element Type",
+                        "format": "text"
+                    },
+                    "visible": {
+                        "label": "Visible",
+                        "format": "boolean"
+                    },
+                    "disabled": {
+                        "label": "Disabled",
+                        "format": "boolean"
+                    },
+                    "pageTitle": {
+                        "label": "Page Title",
+                        "format": "text"
+                    },
+                    "pageUrl": {
+                        "label": "Source URL",
+                        "format": "link"
+                    },
+                    "extractedAt": {
+                        "label": "Extracted At",
+                        "format": "date"
+                    }
+                }
+            }
+        },
+        "documents": {
+            "title": "Document Data",
+            "transformation": {
+                "fields": ["type", "originalFilename", "storageKey", "caseUrl", "downloadedAt"]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "type": {
+                        "label": "Data Type",
+                        "format": "text"
+                    },
+                    "originalFilename": {
+                        "label": "Filename",
+                        "format": "text"
+                    },
+                    "storageKey": {
+                        "label": "Storage Key",
+                        "format": "text"
+                    },
+                    "caseUrl": {
+                        "label": "Case URL",
+                        "format": "link"
+                    },
+                    "downloadedAt": {
+                        "label": "Downloaded At",
+                        "format": "date"
+                    }
+                }
+            }
+        },
+        "detailed": {
+            "title": "Detailed Data",
+            "transformation": {
+                "fields": ["text", "type", "id", "className", "href", "visible", "disabled", "position", "size", "pageUrl", "extractedAt"]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "text": {
+                        "label": "Button Text",
+                        "format": "text"
+                    },
+                    "type": {
+                        "label": "Element Type",
+                        "format": "text"
+                    },
+                    "id": {
+                        "label": "ID",
+                        "format": "text"
+                    },
+                    "className": {
+                        "label": "CSS Classes",
+                        "format": "text"
+                    },
+                    "href": {
+                        "label": "Link URL",
+                        "format": "link"
+                    },
+                    "visible": {
+                        "label": "Visible",
+                        "format": "boolean"
+                    },
+                    "disabled": {
+                        "label": "Disabled",
+                        "format": "boolean"
+                    },
+                    "position": {
+                        "label": "Position (x,y)",
+                        "format": "object"
+                    },
+                    "size": {
+                        "label": "Size (w,h)",
+                        "format": "object"
+                    },
+                    "pageUrl": {
+                        "label": "Source URL",
+                        "format": "link"
+                    },
+                    "extractedAt": {
+                        "label": "Extracted At",
+                        "format": "date"
                     }
                 }
             }
