@@ -11,3 +11,8 @@ storage
 
 # Added by Apify CLI
 .venv
+
+# Environment variables
+.env
+.env.local
+.env.*.local

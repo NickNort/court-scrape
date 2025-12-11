@@ -4,6 +4,9 @@
  * If you're looking for examples or want to learn more, see README.
  */
 
+// Load environment variables
+import 'dotenv/config';
+
 // For more information, see https://docs.apify.com/sdk/js
 import { Actor } from 'apify';
 // For more information, see https://crawlee.dev
@@ -37,25 +40,17 @@ const crawler = new PlaywrightCrawler({
     proxyConfiguration,
     maxRequestsPerCrawl,
     requestHandler: router,
-    // Increase timeout for Cloudflare and complex navigation
-    requestHandlerTimeoutSecs: 180,
+    requestHandlerTimeoutSecs: 60,
+    navigationTimeoutSecs: 30,
+    headless: false,
     launchContext: {
-        launchOptions: {
-            headless: false,
-            args: [
-                '--disable-gpu', // Mitigates the "crashing GPU process" issue in Docker containers
-                '--disable-blink-features=AutomationControlled',
-                '--disable-popup-blocking', // Allow popups and new tabs
-                '--disable-web-security', // Allow cross-origin requests in new tabs
-                '--allow-running-insecure-content', // Allow mixed content
-                '--disable-features=VizDisplayCompositor', // Prevent some blocking behaviors
-                '--no-sandbox', // Disable sandbox for more permissive behavior
-            ],
-        },
+        useChrome: true,
+        useIncognitoPages: false,
     },
 });
 
-await crawler.run(startUrls);
+await crawler.addRequests(startUrls);
+await crawler.run();
 
 // Exit successfully
 await Actor.exit();
